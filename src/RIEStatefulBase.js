@@ -81,8 +81,7 @@ export default class RIEStatefulBase extends RIEBase {
         return <span
             tabIndex="0"
             className={this.makeClassString()}
-            onFocus={this.startEditing}
-            onClick={this.startEditing}
+            onDoubleClick={this.startEditing}
             {...this.props.defaultProps}>{this.state.newValue || this.props.value}</span>;
     };
 
