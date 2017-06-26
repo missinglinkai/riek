@@ -20128,7 +20128,7 @@
 	                    className: _this.makeClassString(),
 	                    onDoubleClick: _this.startEditing
 	                }, _this.props.defaultProps),
-	                _this.state.newValue || _this.props.value
+	                (_this.props.label || '') + (_this.state.newValue || _this.props.value || '')
 	            );
 	        };
 
