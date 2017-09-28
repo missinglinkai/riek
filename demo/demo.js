@@ -20057,7 +20057,7 @@
 	        _this.finishEditing = function () {
 	            debug('finishEditing');
 	            _this.props.beforeFinish ? _this.props.beforeFinish() : null;
-	            var newValue = _reactDom2.default.findDOMNode(_this.refs.input).value;
+	            var newValue = _reactDom2.default.findDOMNode(document.getElementById('input_' + _this.props.childKey));
 	            var result = _this.doValidations(newValue);
 	            if (result && _this.props.value !== newValue) {
 	                _this.commit(newValue);
@@ -20094,7 +20094,7 @@
 
 	        _this.componentDidUpdate = function (prevProps, prevState) {
 	            debug('componentDidUpdate(' + prevProps + ', ' + prevState + ')');
-	            var inputElem = _reactDom2.default.findDOMNode(_this.refs.input);
+	            var inputElem = _reactDom2.default.findDOMNode(document.getElementById('input_' + _this.props.childKey));
 	            debug(inputElem);
 	            if (_this.state.editing && !prevState.editing) {
 	                debug('entering edit mode');
@@ -20114,7 +20114,7 @@
 	                defaultValue: _this.props.value,
 	                onInput: _this.textChanged,
 	                onBlur: _this.elementBlur,
-	                ref: 'input',
+	                id: 'input_' + _this.props.childKey,
 	                onKeyDown: _this.keyDown
 	            }, _this.props.editProps));
 	        };
